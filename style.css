@@ -138,7 +138,7 @@ footer {
 
 /* --- СТИЛИ ДЛЯ ОКНА ОПЛАТЫ СБП --- */
 .modal {
-    display: none; /* Скрыто по умолчанию */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
