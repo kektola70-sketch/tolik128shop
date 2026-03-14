@@ -1,5 +1,6 @@
-// ВПИШИ СВОЙ ЮЗЕРНЕЙМ В ТЕЛЕГРАМЕ (без @) ВМЕСТО "ТВОЙ_НИК_В_ТГ"
-const YOUR_TELEGRAM_USERNAME = "nel_nagi128"; 
+    window.location.href = tgLink;
+э// ТВОЙ НИК В ТЕЛЕГРАМЕ (БЕЗ СОБАЧКИ)
+const YOUR_TELEGRAM_USERNAME = "Nel_nagi128"; 
 
 let cart = [];
 let totalSum = 0;
@@ -55,7 +56,7 @@ function confirmPayment() {
     orderDetails += `\n🎮 *Игровой Тег/Ник:* ${playerTag}\n\n`;
     orderDetails += "Жду скриншот перевода, чтобы проверить оплату и выдать товар!";
 
-    // Создаем безопасную ссылку с текстом для Telegram (encodeURIComponent предотвращает ошибки)
+    // Создаем безопасную ссылку с текстом для Telegram
     let tgLink = `https://t.me/${YOUR_TELEGRAM_USERNAME}?text=${encodeURIComponent(orderDetails)}`;
     
     // Закрываем окно, очищаем корзину
