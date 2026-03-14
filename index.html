@@ -24,19 +24,19 @@
             <!-- Товар 1: Гемы -->
             <div class="product-card">
                 <img src="images/gems.png" alt="Гемы Brawl Stars">
-                <h3>170 Гемов</h3>
+                <h3>30 Гемов</h3>
                 <p class="game-name">Brawl Stars</p>
-                <p class="price">890 ₽</p>
-                <button onclick="addToCart('170 Гемов (Brawl Stars)', 890)">В корзину</button>
+                <p class="price">150 ₽</p>
+                <button onclick="addToCart('30 Гемов (Brawl Stars)', 150)">В корзину</button>
             </div>
 
             <!-- Товар 2: Гемы -->
             <div class="product-card">
                 <img src="images/gems.png" alt="Гемы Brawl Stars">
-                <h3>360 Гемов</h3>
+                <h3>170 Гемов</h3>
                 <p class="game-name">Brawl Stars</p>
-                <p class="price">1790 ₽</p>
-                <button onclick="addToCart('360 Гемов (Brawl Stars)', 1790)">В корзину</button>
+                <p class="price">750 ₽</p>
+                <button onclick="addToCart('170 Гемов (Brawl Stars)', 750)">В корзину</button>
             </div>
 
             <!-- Товар 3: Робуксы -->
@@ -44,8 +44,8 @@
                 <img src="images/robux.png" alt="Робуксы Roblox">
                 <h3>400 Робуксов</h3>
                 <p class="game-name">Roblox</p>
-                <p class="price">450 ₽</p>
-                <button onclick="addToCart('400 Робуксов (Roblox)', 450)">В корзину</button>
+                <p class="price">390 ₽</p>
+                <button onclick="addToCart('400 Робуксов (Roblox)', 390)">В корзину</button>
             </div>
 
             <!-- Товар 4: Робуксы -->
@@ -53,15 +53,45 @@
                 <img src="images/robux.png" alt="Робуксы Roblox">
                 <h3>800 Робуксов</h3>
                 <p class="game-name">Roblox</p>
-                <p class="price">850 ₽</p>
-                <button onclick="addToCart('800 Робуксов (Roblox)', 850)">В корзину</button>
+                <p class="price">750 ₽</p>
+                <button onclick="addToCart('800 Робуксов (Roblox)', 750)">В корзину</button>
             </div>
         </section>
 
         <section class="checkout-section">
-            <button id="checkout-btn" onclick="checkout()">Оформить заказ через Telegram</button>
+            <button id="checkout-btn" onclick="openPaymentModal()">Оплатить заказ</button>
         </section>
     </main>
+
+    <!-- ВСПЛЫВАЮЩЕЕ ОКНО ОПЛАТЫ СБП -->
+    <div id="sbp-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Оплата через СБП</h2>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sbp_logo_ru.svg/1024px-Sbp_logo_ru.svg.png" alt="СБП" class="sbp-logo">
+            </div>
+            
+            <div class="payment-details">
+                <p>К оплате: <strong id="modal-total-price" style="font-size: 24px; color: #00cec9;">0 ₽</strong></p>
+                <p class="instruction">Переведите точную сумму по номеру телефона:</p>
+                
+                <div class="bank-info">
+                    <!-- ИЗМЕНИ ДАННЫЕ НИЖЕ НА СВОИ -->
+                    <h3>+7 (999) 000-00-00</h3> 
+                    <p>Банк: <strong>Сбербанк / Т-Банк</strong></p> 
+                    <p>Получатель: <strong>Анатолий П.</strong></p> 
+                    <!-- КОНЕЦ ТВОИХ ДАННЫХ -->
+                </div>
+
+                <input type="text" id="player-tag" placeholder="Введите ваш Тег / Ник в игре" required>
+            </div>
+
+            <div class="modal-buttons">
+                <button class="btn-success" onclick="confirmPayment()">Я перевел деньги</button>
+                <button class="btn-cancel" onclick="closePaymentModal()">Отмена</button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2023 tolik128shop. Все права защищены.</p>
