@@ -135,3 +135,116 @@ footer {
     background-color: #1e1e2f;
     color: #b2bec3;
 }
+
+/* --- СТИЛИ ДЛЯ ОКНА ОПЛАТЫ СБП --- */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #1e1e2f;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 2px solid #6c5ce7;
+    box-shadow: 0 0 20px rgba(108, 92, 231, 0.5);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sbp-logo {
+    width: 60px;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.payment-details {
+    background-color: #2d3436;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.instruction {
+    font-size: 14px;
+    color: #b2bec3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bank-info {
+    background-color: #121212;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid #00cec9;
+}
+
+.bank-info h3 {
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.bank-info p {
+    font-size: 14px;
+    color: #b2bec3;
+}
+
+#player-tag {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #6c5ce7;
+    background-color: #121212;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    outline: none;
+}
+
+#player-tag:focus {
+    border-color: #00cec9;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-success {
+    background-color: #00b894;
+}
+
+.btn-success:hover {
+    background-color: #00a884;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    border: 1px solid #d63031;
+    color: #d63031;
+}
+
+.btn-cancel:hover {
+    background-color: #d63031;
+    color: white;
+}
