@@ -4,7 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tolik128shop - Гемы и Робуксы</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- ВЕСЬ ДИЗАЙН ТЕПЕРЬ ЗДЕСЬ -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #1e1e2f;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #6c5ce7;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6c5ce7;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cart-info {
+            font-size: 16px;
+            background: #2d3436;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e1e2f, #2d3436);
+        }
+
+        .hero h1 {
+            color: #00cec9;
+            margin-bottom: 10px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .product-card {
+            background-color: #1e1e2f;
+            border-radius: 15px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .game-name {
+            color: #b2bec3;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #00cec9;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #5b4bc4;
+        }
+
+        .checkout-section {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        #checkout-btn {
+            background-color: #00b894;
+            width: auto;
+            font-size: 18px;
+            padding: 15px 30px;
+            border-radius: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e2f;
+            color: #b2bec3;
+        }
+
+        /* Окно СБП */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #1e1e2f;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            border: 2px solid #6c5ce7;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .sbp-logo-text {
+            background-color: #00cec9;
+            color: #000;
+            font-weight: 900;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 18px;
+        }
+
+        .payment-details {
+            background-color: #2d3436;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .bank-info {
+            background-color: #121212;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #00cec9;
+        }
+
+        .bank-info h3 { color: #ffffff; margin-bottom: 5px; }
+        .bank-info p { font-size: 14px; color: #b2bec3; }
+
+        #player-tag {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #6c5ce7;
+            background-color: #121212;
+            color: white;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .modal-buttons { display: flex; flex-direction: column; gap: 10px; }
+        .btn-success { background-color: #00b894; }
+        .btn-cancel { background-color: transparent; border: 1px solid #d63031; color: #d63031; }
+    </style>
 </head>
 <body>
     <header>
@@ -23,7 +226,7 @@
         <section class="products">
             <!-- Товар 1: Гемы -->
             <div class="product-card">
-                <img src="images/gems.jpeg" alt="Гемы Brawl Stars">
+                <img src="https://cdn.icon-icons.com/icons2/3353/PNG/512/brawl_stars_gem_icon_210427.png" alt="Гемы Brawl Stars">
                 <h3>30 Гемов</h3>
                 <p class="game-name">Brawl Stars</p>
                 <p class="price">150 ₽</p>
@@ -32,7 +235,7 @@
 
             <!-- Товар 2: Гемы -->
             <div class="product-card">
-                <img src="images/gems.jpeg" alt="Гемы Brawl Stars">
+                <img src="https://cdn.icon-icons.com/icons2/3353/PNG/512/brawl_stars_gem_icon_210427.png" alt="Гемы Brawl Stars">
                 <h3>170 Гемов</h3>
                 <p class="game-name">Brawl Stars</p>
                 <p class="price">750 ₽</p>
@@ -41,7 +244,7 @@
 
             <!-- Товар 3: Робуксы -->
             <div class="product-card">
-                <img src="images/robux.jpg" alt="Робуксы Roblox">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Robux_2019_Logo_gold.svg/512px-Robux_2019_Logo_gold.svg.png" alt="Робуксы Roblox">
                 <h3>400 Робуксов</h3>
                 <p class="game-name">Roblox</p>
                 <p class="price">390 ₽</p>
@@ -50,7 +253,7 @@
 
             <!-- Товар 4: Робуксы -->
             <div class="product-card">
-                <img src="images/robux.jpg" alt="Робуксы Roblox">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Robux_2019_Logo_gold.svg/512px-Robux_2019_Logo_gold.svg.png" alt="Робуксы Roblox">
                 <h3>800 Робуксов</h3>
                 <p class="game-name">Roblox</p>
                 <p class="price">750 ₽</p>
@@ -73,12 +276,12 @@
             
             <div class="payment-details">
                 <p>К оплате: <strong id="modal-total-price" style="font-size: 24px; color: #00cec9;">0 ₽</strong></p>
-                <p class="instruction">Переведите точную сумму по номеру телефона:</p>
+                <p style="font-size: 14px; color: #b2bec3; margin: 10px 0;">Переведите точную сумму по номеру телефона:</p>
                 
                 <div class="bank-info">
                     <h3>+7 (959) 183-58-40</h3> 
                     <p>Банк: <strong>Сбербанк / Т-Банк</strong></p> 
-                    <p>Получатель: <strong>Данил С.</strong></p> 
+                    <p>Получатель: <strong>Анатолий П.</strong></p> 
                 </div>
 
                 <input type="text" id="player-tag" placeholder="Введите ваш Тег / Ник в игре" required>
@@ -95,6 +298,68 @@
         <p>&copy; 2023 tolik128shop. Все права защищены.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ВСЯ ЛОГИКА ТЕПЕРЬ ЗДЕСЬ -->
+    <script>
+        const YOUR_TELEGRAM_USERNAME = "Nel_nagi128"; 
+
+        let cart = [];
+        let totalSum = 0;
+
+        function addToCart(itemName, price) {
+            cart.push({ name: itemName, price: price });
+            totalSum += price;
+            updateCartUI();
+            alert(`Добавлено: ${itemName} за ${price} ₽`);
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-count').innerText = cart.length;
+            document.getElementById('cart-total').innerText = totalSum;
+        }
+
+        function openPaymentModal() {
+            if (cart.length === 0) {
+                alert("Ваша корзина пуста! Добавьте товар.");
+                return;
+            }
+            document.getElementById('modal-total-price').innerText = `${totalSum} ₽`;
+            document.getElementById('sbp-modal').style.display = 'flex';
+        }
+
+        function closePaymentModal() {
+            document.getElementById('sbp-modal').style.display = 'none';
+        }
+
+        function confirmPayment() {
+            const playerTag = document.getElementById('player-tag').value;
+
+            if (playerTag.trim() === "") {
+                alert("Пожалуйста, введите ваш Тег или Ник в игре!");
+                return;
+            }
+
+            let orderDetails = "🟢 НОВАЯ ОПЛАТА СБП! 🟢\n\n";
+            orderDetails += `Покупатель нажал 'Я оплатил'.\n`;
+            orderDetails += `*Ожидаемая сумма:* ${totalSum} ₽\n\n`;
+            
+            orderDetails += "🛒 *ЗАКАЗ:*\n";
+            cart.forEach((item, index) => {
+                orderDetails += `${index + 1}. ${item.name} - ${item.price} ₽\n`;
+            });
+            
+            orderDetails += `\n🎮 *Игровой Тег/Ник:* ${playerTag}\n\n`;
+            orderDetails += "Жду скриншот перевода, чтобы проверить оплату и выдать товар!";
+
+            let tgLink = `https://t.me/${YOUR_TELEGRAM_USERNAME}?text=${encodeURIComponent(orderDetails)}`;
+            
+            closePaymentModal();
+            cart = [];
+            totalSum = 0;
+            updateCartUI();
+            document.getElementById('player-tag').value = "";
+            
+            window.location.href = tgLink;
+        }
+    </script>
 </body>
 </html>
