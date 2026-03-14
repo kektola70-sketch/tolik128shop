@@ -1,5 +1,5 @@
 // ВПИШИ СВОЙ ЮЗЕРНЕЙМ В ТЕЛЕГРАМЕ (без @) ВМЕСТО "ТВОЙ_НИК_В_ТГ"
-const YOUR_TELEGRAM_USERNAME = "ТВОЙ_НИК_В_ТГ"; 
+const YOUR_TELEGRAM_USERNAME = "nel_nagi128"; 
 
 let cart = [];
 let totalSum = 0;
